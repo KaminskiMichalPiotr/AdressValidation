@@ -62,7 +62,7 @@ public class AddressDataValidator {
 
     private boolean validateStreet(String street) throws IllegalArgumentException{
         Pattern standard = Pattern.compile("[A-Z][a-z]++");  //e.g. "Zwyciestwa"
-        Pattern startingWithSpecialWord = Pattern.compile("([a-z]++)( [A-Z][a-z]++)+( [A-Z][a-z]++-[A-Z][a-z]++)*"); //e.g. "most Nowaka", "plac Centralny"
+        Pattern startingWithSpecialWord = Pattern.compile("([a-z]++.*)( [A-Z][a-z]++)+( [A-Z][a-z]++-[A-Z][a-z]++)*"); //e.g. "most Nowaka", "plac Centralny"
         Pattern streetDualOrMoreName = Pattern.compile("([A-Z][a-z]++ )+[A-Z][a-z]++"); //e.g. "Krolowej Jadwigi"
         Pattern streetDualOrMoreNameEndingWithDashSurname = Pattern.compile("([A-Z][a-z]++ )*([A-Z][a-z]++-[A-Z][a-z]++)"); //e.g. "Generala Boleslawa Wieniawy-Dlugoszowskiego"
         Pattern streetWithNumberWhitespaceName  = Pattern.compile("\\d++ [A-Z][a-z]++"); //e.g. "3 Maja"

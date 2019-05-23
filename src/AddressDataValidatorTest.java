@@ -103,6 +103,7 @@ class AddressDataValidatorTest {
         addressDataValidator.setStreet("8 Kwietnia");
         addressDataValidator.setStreet("Zwyciestwa");
         addressDataValidator.setStreet("rondo Jadwigi");
+        addressDataValidator.setStreet("plk. Pilota");
         addressDataValidator.setStreet("most Stanislawa Augusta Poniatowskiego");
         addressDataValidator.setStreet("most Stanislawa Augusta-Poniatowskiego");
         addressDataValidator.setStreet("most Stanislawa Jana Augusta-Poniatowskiego");
