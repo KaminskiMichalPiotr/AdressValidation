@@ -13,6 +13,16 @@ class AddressDataValidatorTest {
     }
 
     @Test
+    public void checkConstructor(){
+        addressDataValidator= new AddressDataValidator("44-100","Jana Nowaka-Jezioranskiego","Gliwice","69B/5");
+    }
+
+    @Test
+    public void checkConstructorWithWrongData(){
+        assertThrows(IllegalArgumentException.class, () -> addressDataValidator= new AddressDataValidator("",null,null,null));
+    }
+
+    @Test
     public void checkCorrectPostalCode(){
         addressDataValidator.setPolishPostalCode("08-100");
     }
@@ -96,7 +106,6 @@ class AddressDataValidatorTest {
         addressDataValidator.setStreet("most Stanislawa Augusta Poniatowskiego");
         addressDataValidator.setStreet("most Stanislawa Augusta-Poniatowskiego");
         addressDataValidator.setStreet("most Stanislawa Jana Augusta-Poniatowskiego");
-
         addressDataValidator.setStreet("Generala Boleslawa");
         addressDataValidator.setStreet("Generala Boleslawa Nowaka");
         addressDataValidator.setStreet("Generala Boleslawa Kniazia-Sobieskiego");
