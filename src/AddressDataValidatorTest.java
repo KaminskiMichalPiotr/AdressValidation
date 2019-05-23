@@ -23,6 +23,17 @@ class AddressDataValidatorTest {
     }
 
     @Test
+    public void checkIfAllDataIsSet(){
+        addressDataValidator = new AddressDataValidator("44-100","Jana Nowaka-Jezioranskiego","Gliwice","69B/5");
+        assertEquals(true, addressDataValidator.isAddressComplete());
+    }
+
+    @Test
+    public void checkIfAllDataIsNotSet(){
+        assertEquals(false, addressDataValidator.isAddressComplete());
+    }
+
+    @Test
     public void checkCorrectPostalCode(){
         addressDataValidator.setPolishPostalCode("08-100");
     }

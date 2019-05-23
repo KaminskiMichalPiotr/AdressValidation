@@ -60,6 +60,10 @@ public class AddressDataValidator {
         return data == null || data.trim().isEmpty();
     }
 
+    public boolean isAddressComplete(){
+        return !(isDataEmptyOrNull(polishPostalCode) || isDataEmptyOrNull(street) || isDataEmptyOrNull(city) || isDataEmptyOrNull(buildingNumber));
+    }
+
     private boolean validateStreet(String street) throws IllegalArgumentException{
         Pattern standard = Pattern.compile("[A-Z][a-z]++");  //e.g. "Zwyciestwa"
         Pattern startingWithSpecialWord = Pattern.compile("([a-z]++.*)( [A-Z][a-z]++)+( [A-Z][a-z]++-[A-Z][a-z]++)*"); //e.g. "most Nowaka", "plac Centralny"
